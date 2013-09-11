@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="src/pen.css" />
   </head>
   <body>
-    <form id="saveToDisk"><input type="submit"></input></form>
+    <form id="saveButton"><input type="submit" value="Save guidance"></input></form>
   
   <!-- TODO: Determine how to use this placeholder. -->
   <div data-toggle="pen" placeholder="..." class="pen" contenteditable="true">
@@ -51,8 +51,10 @@
 
     <!-- TODO: Export JSON. -->
     <script>
-      var saveButton = document.getElementById('saveToDisk')
-      saveButton.setAttribute('action', 'data:text/html,' + data);
+      saveToDisk = function() {
+        var saveButton = document.getElementById('saveButton')
+        saveButton.setAttribute('action', 'data:text/html,' + data);
+      };
     </script>
   </body>
 </html>
