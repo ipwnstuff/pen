@@ -5,13 +5,14 @@
     <title>ControlsInsight</title>
     <style type="text/css">
       *{padding:0;margin:0;}
-      html{border-top:10px #cccccc solid;}
+      html{border-top:10px #ff0f47 solid;}
       body{width:800px;margin:0 auto;padding:5% 20px 20px;font-family:Palatino, Optima, Georgia, serif;}
       @media all and (max-width:780px){ body, pre a{width:80%;} }
     </style>
     <link rel="stylesheet" href="src/pen.css" />
   </head>
   <body>
+    <form id="saveToDisk"><input type="submit"></input></form>
   
   <!-- TODO: Determine how to use this placeholder. -->
   <div data-toggle="pen" placeholder="..." class="pen" contenteditable="true">
@@ -46,6 +47,12 @@
       };
 
       var pen = new Pen(options);
+    </script>
+
+    <!-- TODO: Export JSON. -->
+    <script>
+      var saveButton = document.getElementById('saveToDisk')
+      saveButton.setAttribute('action', 'data:text/html;base64,' + window.btoa(data));
     </script>
   </body>
 </html>
