@@ -5,7 +5,7 @@
     <title>ControlsInsight</title>
     <style type="text/css">
       *{padding:0;margin:0;}
-      html{border-top:10px #1abf89 solid;}
+      html{border-top:10px #ffffff solid;}
       body{width:800px;margin:0 auto;padding:5% 20px 20px;font-family:Palatino, Optima, Georgia, serif;}
       @media all and (max-width:780px){ body, pre a{width:80%;} }
       #fork{position:fixed;right:0;top:0;}
@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="src/pen.css" />
   </head>
   <body>
-  <div data-toggle="pen" placeholder="Start writing your guidance here..."></div>
+  <div data-toggle="pen" placeholder="Start writing your guidance here...">
+    <h1>Start writing your guidance here...</h1>>
+  </div>
 
   <script src="src/pen.js"></script>
   <script src="src/markdown.js"></script>
@@ -22,7 +24,7 @@
       var options = {
           editor: document.querySelector('[data-toggle="pen"]'),
           debug: true,
-          list: ['h2', 'h3', 'h4', 'p', 'link', 'bold', 'italic', 'underline']
+          list: ['h2', 'h3', 'h4', 'p', 'pre', 'createlink', 'bold', 'italic', 'underline', 'insertorderedlist', 'insertunorderedlist']
       };
 
       var pen = new Pen(options);
