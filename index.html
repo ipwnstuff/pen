@@ -52,7 +52,7 @@
     <!-- TODO: Export JSON. -->
     <script>
       saveToDisk = function() {
-        var data = document.getElementById('guidanceEditor');
+        var data = document.getElementById('guidanceEditor').outerHTML;
         var saveButton = document.getElementById('saveButton');
         saveButton.action = 'data:text/html,' + data;
       };
