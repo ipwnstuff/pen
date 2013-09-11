@@ -15,7 +15,7 @@
     <form id="saveButton"><input type="submit" value="Save guidance" onClick="saveToDisk"></input></form>
   
   <!-- TODO: Determine how to use this placeholder. -->
-  <div data-toggle="pen" placeholder="..." class="pen" contenteditable="true">
+  <div id="guidanceEditor" data-toggle="pen" placeholder="..." class="pen" contenteditable="true">
     <h2>OVERVIEW FOR DEPLOYING WINDOWS UPDATES</h2>
     <p>The following procedures describe how to install the latest Windows OS versions. You can accomplish this by first creating a Group Policy Object (linked to an Organizational Unit), loading a WSUS administrative template, configuring automatic updates, and then specifying update service locations. Windows OS updates can be configured using Group Policy settings for Windows Server Update Services (WSUS). The Group Policy Object (GPO) will be linked to an Active Directory container appropriate for your environment. Configuring Windows OS updates also includes Internet Explorer browser updates.</p>
     <p><b>NOTE</b>: We do not recommend editing the Default Domain or Default Domain Controller GPOs to add WSUS settings.</p>
@@ -52,7 +52,8 @@
     <!-- TODO: Export JSON. -->
     <script>
       saveToDisk = function() {
-        var saveButton = document.getElementById('saveButton')
+        var data = document.getElementById('guidanceEditor');
+        var saveButton = document.getElementById('saveButton');
         saveButton.action = 'data:text/html,' + data;
       };
     </script>
